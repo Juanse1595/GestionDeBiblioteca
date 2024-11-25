@@ -1,4 +1,4 @@
-public class Libro {
+public class Libro extends ItemBiblioteca implements Catalogable {
 
     // Atributos
     private String nombre;
@@ -11,4 +11,26 @@ public class Libro {
         this.autor = autor;
         this.anio = anio;
     }
+
+    // Metodos abstractos
+    @Override
+    public double calcularMultas() {
+        return 100;
+    }
+
+    @Override
+    public void devolver() {
+        System.out.println("Devolver libro");
+    }
+
+    @Override
+    public void prestar() {
+        System.out.println("Prestar libro");
+    }
+
+    @Override
+    public void obtenerInformacion() {
+        System.out.println("Info libro");
+    }
+
 }

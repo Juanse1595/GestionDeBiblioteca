@@ -4,11 +4,25 @@ public class GestionDeBiblioteca {
 
         Revista[] biblioteca = new Revista[3];
 
-        // TODO: asignar valores de ejemplo a los argumentos
-        biblioteca[0] = new Revista(null, 0, 0);
-        biblioteca[1] = new Revista(null, 0, 0);
-        biblioteca[2] = new Revista(null, 0, 0);
+        biblioteca[0] = new Revista("Fortune", 21, 167);
+        biblioteca[1] = new Revista("Playboy", 1, 1);
+        biblioteca[2] = new Revista("EliseoArt", 12, 32);
 
-        // TODO: mostrar el uso de los metodos prestar, devolver, obtenerInformacion;
+        biblioteca[0].obtenerInformacion();
+        biblioteca[0].prestar();
+        biblioteca[0].prestar();
+        biblioteca[0].prestar();
+        biblioteca[0].prestar();
+        biblioteca[0].prestar();
+        biblioteca[0].prestar();
+        biblioteca[0].prestar();
+        biblioteca[0].obtenerInformacion();
+        biblioteca[0].devolver();
+        biblioteca[0].devolver();
+        biblioteca[0].obtenerInformacion();
+
+        biblioteca[1].prestar();
+        biblioteca[1].prestar();
+
     }
 }
