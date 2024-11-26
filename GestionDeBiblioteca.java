@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class GestionDeBiblioteca {
 
     public static void main(String[] args) {
@@ -25,44 +27,49 @@ public class GestionDeBiblioteca {
         // biblioteca[1].prestar();
         System.out.println("\033\143");// limpia la consola
 
-        Libro[] biblioteca = new Libro[3];
+        // Libro[] biblioteca = new Libro[3];
 
-        biblioteca[0] = new Libro("La Ciudad de los Libros Soñadores", "Walter Moers", 2001, 800);
-        biblioteca[1] = new Libro("Harry Potter y la Camara Secreta", "J.K Rolling", 1998, 560);
-        biblioteca[2] = new Libro("1984", "George Orwell", 1948, 236);
+        // biblioteca[0] = new Libro("La Ciudad de los Libros Soñadores", "Walter
+        // Moers", 2001, 800);
+        // biblioteca[1] = new Libro("Harry Potter y la Camara Secreta", "J.K Rolling",
+        // 1998, 560);
+        // biblioteca[2] = new Libro("1984", "George Orwell", 1948, 236);
 
         // biblioteca[0].obtenerInformacion();
 
-        Biblioteca biblio = new Biblioteca();
+        // Biblioteca biblio = new Biblioteca();
 
-        for (Libro libro : biblioteca) {
-            biblio.agregarLibro(libro);
-        }
+        // for (Libro libro : biblioteca) {
+        // biblio.agregarLibro(libro);
+        // }
 
-        biblio.mostrarLibros();
+        // biblio.mostrarLibros();
 
-        System.out.println("=======================================");
+        // System.out.println("=======================================");
 
-        Persona persona1 = new Persona("Luis", "Hernandez");
+        // Persona persona1 = new Persona("Luis", "Hernandez");
 
-        biblio.prestarLibro(biblio.getLibros().get(0), persona1);
+        // biblio.prestarLibro(biblio.getLibros().get(0), persona1);
 
-        System.out.println("=======================================");
+        // System.out.println("=======================================");
 
-        persona1.mostrarLibros();
+        // persona1.mostrarLibros();
 
-        System.out.println("=======================================");
+        // System.out.println("=======================================");
 
-        persona1.devolverLibro(biblio.getLibros().get(0));
+        // persona1.devolverLibro(biblio.getLibros().get(0));
 
-        System.out.println("=======================================");
+        // System.out.println("=======================================");
 
-        biblio.mostrarLibros();
+        // biblio.mostrarLibros();
+
+        menu(new Biblioteca());
     }
-    public static void menu(Biblioteca biblio){
+
+    public static void menu(Biblioteca biblio) {
 
         Scanner sc = new Scanner(System.in);
-        while(true){
+        while (true) {
             System.out.println("Bienvenido");
             System.out.println("Elija la opción: ");
             System.out.println();
@@ -71,13 +78,12 @@ public class GestionDeBiblioteca {
             System.out.println("3. Salir");
 
             int opcion = sc.nextInt();
-            switch(opcion){
-                case 1->{
+            switch (opcion) {
+                case 1 -> {
                     System.out.println("Ingrese el nombre del libro: ");
-                    String nombre = sc.nextLine();
-                    sc.nextLine();
+                    String nombre = sc.next();
                     System.out.println("Ingrese el autor del libro:");
-                    String autor = sc.nextLine();
+                    String autor = sc.next();
                     System.out.println("Ingrese el año de publicación del libro:");
                     int anio = sc.nextInt();
                     System.out.println("Ingrese el número de páginas del libro:");
@@ -86,18 +92,17 @@ public class GestionDeBiblioteca {
                     System.out.println("Libro ingresado!");
                     System.out.println();
                 }
-                case 2 ->{
+                case 2 -> {
                     System.out.println("Ingrese el nombre del libro: ");
-                    String nombre = sc.nextLine();
-                    sc.nextLine();
-                    for (Libro libro : biblio.getLibros()){
+                    String nombre = sc.next();
+                    for (Libro libro : biblio.getLibros()) {
                         if (libro.getNombre().equals(nombre))
                             libro.obtenerInformacion();
                     }
                 }
-            case 3 ->{
-                System.out.println("Saliendo del menu");
-                return;
+                case 3 -> {
+                    System.out.println("Saliendo del menu");
+                    return;
                 }
             }
         }

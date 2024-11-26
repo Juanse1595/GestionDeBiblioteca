@@ -75,7 +75,6 @@ public class Libro extends ItemBiblioteca implements Catalogable {
     @Override
     public void obtenerInformacion() {
         System.out.println(this.toString());
-
     }
 
     @Override
