@@ -59,4 +59,47 @@ public class GestionDeBiblioteca {
 
         biblio.mostrarLibros();
     }
+    public static void menu(Biblioteca biblio){
+
+        Scanner sc = new Scanner(System.in);
+        while(true){
+            System.out.println("Bienvenido");
+            System.out.println("Elija la opción: ");
+            System.out.println();
+            System.out.println("1. Agregar Libro");
+            System.out.println("2. Consultar Información");
+            System.out.println("3. Salir");
+
+            int opcion = sc.nextInt();
+            switch(opcion){
+                case 1->{
+                    System.out.println("Ingrese el nombre del libro: ");
+                    String nombre = sc.nextLine();
+                    sc.nextLine();
+                    System.out.println("Ingrese el autor del libro:");
+                    String autor = sc.nextLine();
+                    System.out.println("Ingrese el año de publicación del libro:");
+                    int anio = sc.nextInt();
+                    System.out.println("Ingrese el número de páginas del libro:");
+                    int numpag = sc.nextInt();
+                    biblio.agregarLibro(new Libro(nombre, autor, anio, numpag));
+                    System.out.println("Libro ingresado!");
+                    System.out.println();
+                }
+                case 2 ->{
+                    System.out.println("Ingrese el nombre del libro: ");
+                    String nombre = sc.nextLine();
+                    sc.nextLine();
+                    for (Libro libro : biblio.getLibros()){
+                        if (libro.getNombre().equals(nombre))
+                            libro.obtenerInformacion();
+                    }
+                }
+            case 3 ->{
+                System.out.println("Saliendo del menu");
+                return;
+                }
+            }
+        }
+    }
 }
