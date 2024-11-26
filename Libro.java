@@ -4,12 +4,14 @@ public class Libro extends ItemBiblioteca implements Catalogable {
     private String nombre;
     private String autor;
     private int anio;
+    private int num_pag;
 
     // Constructores
-    public Libro(String nombre, String autor, int anio) {
+    public Libro(String nombre, String autor, int anio, int num_pag) {
         this.nombre = nombre;
         this.autor = autor;
         this.anio = anio;
+        this.num_pag = num_pag;
     }
 
     // Metodos abstractos
@@ -30,7 +32,17 @@ public class Libro extends ItemBiblioteca implements Catalogable {
 
     @Override
     public void obtenerInformacion() {
-        System.out.println("Info libro");
+        System.out.println(this.toString());
+
     }
 
+    @Override
+    public String toString() {
+        return "Libro{" +
+                "nombre='" + nombre + '\'' +
+                ", autor='" + autor + '\'' +
+                ", anio=" + anio +
+                ", num_pag=" + num_pag +
+                '}';
+    }
 }
